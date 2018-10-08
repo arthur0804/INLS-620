@@ -1,0 +1,102 @@
+@prefix : <#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# define some classes
+:Person a rdfs:Class.
+:Team a rdfs:Class.
+:College a rdfs:Class.
+:Place a rdfs:Class.
+:Contract a rdfs:Class.
+:Season a rdfs:Class.
+
+# define some properties
+:graduatedFrom a rdf:Property;
+	rdfs:domain :Person;
+	rdfs:range :College . 
+
+:bornIn a rdf:Property;
+	rdfs:domain :Person;
+	rdfs:range :Place . 
+
+:position a rdf:Property;
+    rdfs:domain :Person;
+    rdfs:range rdfs:Literal .
+
+:fullName a rdf:Property;
+    rdfs:domain :Person;
+    rdfs:range rdfs:Literal .
+
+:height a rdf:Property;
+    rdfs:domain :Person;
+    rdfs:range rdfs:Literal .
+
+:weight a rdf:Property;
+    rdfs:domain :Person;
+    rdfs:range rdfs:Literal .
+
+:signedBy a rdf:Property;
+	rdfs:domain :Contract;
+    rdfs:range rdfs:Person .
+    rdfs:range rdfs:Team .
+
+:effectiveIn a rdf:Property;
+	rdfs:domain :Contract;
+    rdfs:range rdfs:Season .
+
+
+# 16 triples
+<https://stephencurry30.com/>
+	a :Person ;
+	:fullName "Stephen Curry" ;
+	:height "190" ;
+	:weight "86" ;
+	:position "PG" ;
+	:graduatedFrom <https://www.davidson.edu/> ;
+	:bornIn <https://www.akronohio.gov/>
+	.
+
+<http://www.lebronjames.com/>
+	a :Person ;
+	:fullName "Lebron James" ;
+	:height "203" ;
+	:weight "113" ;
+	:position "SF" ;
+	:bornIn <https://www.akronohio.gov/>
+	.
+
+<http://jamesharden.com/>
+	a :Person ;
+	:fullName "James Harden" ;
+	:height "196" ;
+	:weight "99" ;
+	:position "SG" ;
+	:graduatedFrom <https://www.asu.edu/> ;
+	:bornIn <https://www.lacity.org/>
+	.
+
+
+<https://www.basketball-reference.com/players/c/curryst01.html#all_contracts_gsw>
+	a :Contract ;
+	:signedBy <https://stephencurry30.com/> , <https://www.nba.com/warriors/> ;
+	:effectiveIn <https://www.basketball-reference.com/leagues/NBA_2018.html>
+	.
+
+<https://www.basketball-reference.com/players/h/hardeja01.html#all_contracts_hou>
+	a :Contract ;
+	:signedBy <http://jamesharden.com/> , <https://www.nba.com/rockets/> ;
+	:effectiveIn <https://www.basketball-reference.com/leagues/NBA_2018.html>
+	.
+
+<https://www.nba.com/warriors/> a :Team .
+
+<https://www.nba.com/rockets/> a :Team .
+
+<https://www.basketball-reference.com/leagues/NBA_2018.html> a :Season .
+
+<https://www.asu.edu/> a :College .
+
+<https://www.davidson.edu/> a :College .
+
+<https://www.akronohio.gov/> a :Place .
+
+<https://www.lacity.org/> a :Place .

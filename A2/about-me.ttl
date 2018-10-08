@@ -1,0 +1,24 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+<https://jiamingqu.com>
+  a foaf:Person ;
+  foaf:givenName "Jiaming" ;
+  foaf:familyName "Qu" ;
+  foaf:birthday "August 4th 1995" ;
+  foaf:knows <https://lukeisme.com/>
+  .
+
+<https://ils.unc.edu/~march/images/Manning-Hall.jpg>
+  a foaf:Image ;
+  foaf:depicts <https://sils.unc.edu/> ;
+  dc:format "image/jpg"
+  .
+
+<https://sils.unc.edu/>
+  a foaf:Organization ;
+  foaf:based_near <https://library.unc.edu/davis/>
+  .
+
+
+
